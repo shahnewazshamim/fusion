@@ -40,13 +40,20 @@ class WelcomeController extends BaseController
     public function indexAction()
     {
 
+        $this->load->view('welcome/index');
+
+    }
+
+    public function testAction()
+    {
+
         $category = $this->load->model('category');
 
         $data['name'] = 'My Name';
 
         $data['categories'] = $category->get_data();
 
-        $this->load->view('welcome/index', $data);
+        $this->load->view('welcome/test', $data);
 
     }
 

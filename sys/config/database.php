@@ -12,31 +12,35 @@
  * @copyright  Copyright (c) 2012 - 2016, Softyard LAB (http://softyardbd.com)
  * @license  GNU GENERAL PUBLIC LICENSE (https://www.gnu.org/licenses/gpl-3.0.en.html) License
  * @since  Version 1.0.0
- * @filename  BaseController.php
+ * @filename  database.php
  */
 
-namespace Fusion\Sys\Core\Libs;
+$drivers = array(
 
-use Fusion\Sys\Core\Libs\Loader;
+    'PDO' => array(
 
-class BaseController
-{
+        'hostname' => 'localhost',
 
-    /**
-     * List of loaded classes
-     *
-     * @var	array
-     */
-    protected $load = array();
+        'username' => 'root',
 
-    /**
-     * BaseController constructor.
-     *
-     * @return object|mixed
-     */
-    public function __construct()
-    {
-        $this->load = new Loader();
-    }
+        'password' => '',
 
-}
+        'database' => 'fusion'
+
+    ),
+
+    'mysqli' => array(
+
+        'hostname' => 'localhost',
+
+        'username' => 'root',
+
+        'password' => '',
+
+        'database' => 'fusion'
+
+    ),
+
+);
+
+$connection['default'] = 'mysqli';

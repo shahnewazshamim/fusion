@@ -69,7 +69,7 @@ if (!function_exists('public_path')) {
 
 if (!function_exists('show_error')) {
 
-    function show_error($error, $file_name = null)
+    function show_error($error, $file_name = null, $error_message = null)
     {
         switch ($error) {
 
@@ -99,6 +99,32 @@ if (!function_exists('show_error')) {
                 break;
 
 
+            case NO_DEFAULT_DB :
+
+                $error_head = 'Database Driver Undefined.';
+
+                $error_desc = 'Please select a default driver on page sys/config/database.php. <code>$database[\'default\'] = \'PDO\';</code>';
+
+                include_once dirname(dirname(__DIR__)) . '/app/views/default/errors/system.php';
+
+                break;
+
+
+            case DB_CONNECTION_FAILED :
+
+                $error_head = 'Database Error.';
+
+                if ($error_message != null) {
+
+                    $error_desc = "<code>$error_message</code>";
+
+                }
+
+                include_once dirname(dirname(__DIR__)) . '/app/views/default/errors/system.php';
+
+                break;
+
+
             default:
 
                 $error_head = 'Unknown Error';
@@ -110,6 +136,8 @@ if (!function_exists('show_error')) {
                 break;
 
         }
+
+        die();
 
     }
 

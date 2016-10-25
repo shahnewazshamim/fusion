@@ -20,3 +20,7 @@ define('FUSION_VERSION', '1.0.0');
 define('PAGE_NOT_FOUND', '404');
 
 define('FILE_NOT_FOUND', 'File');
+
+define('NO_DEFAULT_DB', 'no_default_db');
+
+define('DB_CONNECTION_FAILED', 'db_connection_failed');

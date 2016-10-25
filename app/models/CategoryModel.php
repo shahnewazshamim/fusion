@@ -17,7 +17,9 @@
 
 namespace Fusion\App\Models;
 
-class CategoryModel
+use Fusion\Sys\Core\Libs\BaseModel;
+
+class CategoryModel extends BaseModel
 {
 
     /**
@@ -25,7 +27,7 @@ class CategoryModel
      */
     public function __construct()
     {
-
+        parent::__construct();
     }
 
     /**

@@ -50,9 +50,9 @@ class App
      */
     public static function load()
     {
-        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '/helpers/system_helpers.php';
+        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'helpers/system_helpers.php';
 
-        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '/core/constants/system_constants.php';
+        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'core/constants/system_constants.php';
     }
 
     /**
